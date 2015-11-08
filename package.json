@@ -1,0 +1,37 @@
+{
+  "name": "ts-bs",
+  "version": "1.0.0",
+  "description": "try out",
+  "main": "index.js",
+  "scripts": {
+    "server": "browser-sync start --server \"app\" --files \"app/js/dist/*.js, app/*.html\"",
+    "watch": "watchify src/app.ts -p [tsify --noImplicitAny] --debug -v -o app/js/dist/bundle.js",
+    "test": "karma start --single-run",
+    "test:watch": "karma start",
+    "start": "npm run-script server & npm run-script watch & wait"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular-mocks": "^1.4.7",
+    "browser-sync": "^2.9.12",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.15",
+    "karma-browserify": "^4.4.0",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.18",
+    "tsd": "^0.6.5",
+    "tsify": "^0.12.2",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.7"
+  }
+}
