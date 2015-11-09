@@ -1,9 +1,33 @@
 <!doctype html>
 <html>
+  <head>
+    <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
+  </head>
   <body ng-app="app">
-    <h1>this is an h1</h1>
 
-    <div a-component></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>this is an h1</h1>
+        </div>
+
+        <div class="col-md-6" a-component></div>
+        <div class="col-md-6 well">
+          <h3>in a well</h3>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <uib-tabset justified="true">
+            <uib-tab heading="Justified">Justified content</uib-tab>
+            <uib-tab heading="SJ">Labeled Justified content</uib-tab>
+            <uib-tab heading="Long Justified">Long Labeled Justified content</uib-tab>
+          </uib-tabset>
+        </div>
+      </div>
+    </div>
 
     <script src="js/dist/bundle.js"></script>
   </body>

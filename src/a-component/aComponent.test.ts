@@ -6,11 +6,11 @@ import 'angular-mocks/ngMock';
 
 describe('aComponent tests', () => {
 
-  var $compile, $rootScope;
+  var $compile: any, $rootScope: any;
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject((_$compile_, _$rootScope_) => {
+  beforeEach(inject((_$compile_: any, _$rootScope_: any) => {
     $compile = _$compile_;
     $rootScope = _$rootScope_;
   }));

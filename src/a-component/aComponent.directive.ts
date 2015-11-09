@@ -1,7 +1,7 @@
 
 export default (): angular.IDirective => {
   return {
-    template: '<h3>hi there, from an h3</h3>',
+    template: '<h2>hi there, from an h2</h2>',
     restrict: 'A',
     scope: {}
   }
