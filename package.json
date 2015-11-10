@@ -6,11 +6,12 @@
   "scripts": {
     "server": "browser-sync start --server \"app\" --files \"app/js/dist/*.js, app/*.html, app/css/*.css\"",
     "js:watch": "nodemon -w ./src -e ts --exec \"watchify src/app.ts -p [tsify --noImplicitAny] --debug -v -o app/js/dist/bundle.js\"",
+    "js:webpack:watch": "webpack --progress --colors --watch",
     "test": "karma start --single-run",
     "test:watch": "karma start",
     "css": "node-sass --source-map true --include-path node_modules/bootstrap-sass/assets/stylesheets/ src/styles/styles.sass app/css/styles.css",
     "css:watch": "node-sass --source-map true -w --include-path node_modules/bootstrap-sass/assets/stylesheets/ src/styles/styles.sass app/css/styles.css",
-    "start": "npm run-script server & npm run-script js:watch & npm run-script css:watch & wait"
+    "start": "npm run-script server & npm run-script js:webpack:watch & npm run-script css:watch & wait"
   },
   "author": "",
   "license": "ISC",
@@ -27,13 +28,17 @@
     "karma-jasmine": "^0.3.6",
     "karma-mocha-reporter": "^1.1.1",
     "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
     "node-sass": "^3.4.1",
     "nodemon": "^1.8.1",
     "phantomjs": "^1.9.18",
+    "ts-loader": "^0.6.1",
     "tsd": "^0.6.5",
     "tsify": "^0.12.2",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.6.0"
+    "watchify": "^3.6.0",
+    "webpack": "^1.12.3"
   },
   "dependencies": {
     "angular": "^1.4.7",

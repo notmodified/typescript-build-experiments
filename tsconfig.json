@@ -3,10 +3,9 @@
         "module": "commonjs",
         "target": "es3",
         "noImplicitAny": true,
-        "noEmitOnError": true,
+        "noEmitOnError": false,
         "outDir": "./tmp",
-        "rootDir": "./",
-        "inlineSourceMap": true
+        "rootDir": "./"
     },
     "exclude": [
         "node_modules"
