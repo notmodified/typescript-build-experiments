@@ -9,8 +9,8 @@
     "js:webpack:watch": "webpack --progress --colors --watch",
     "test": "karma start --single-run",
     "test:watch": "karma start",
-    "css": "node-sass --source-map true --include-path node_modules/bootstrap-sass/assets/stylesheets/ src/styles/styles.sass app/css/styles.css",
-    "css:watch": "node-sass --source-map true -w --include-path node_modules/bootstrap-sass/assets/stylesheets/ src/styles/styles.sass app/css/styles.css",
+    "css": "node-sass --source-map-embed true --source-map-contents --include-path node_modules/bootstrap-sass/assets/stylesheets/ src/styles/styles.sass app/css/styles.css",
+    "css:watch": "node-sass -w --source-map-embed true --source-map-contents --include-path node_modules/bootstrap-sass/assets/stylesheets/ src/styles/styles.sass app/css/styles.css",
     "start": "npm run-script server & npm run-script js:webpack:watch & npm run-script css:watch & wait"
   },
   "author": "",
@@ -33,6 +33,7 @@
     "node-sass": "^3.4.1",
     "nodemon": "^1.8.1",
     "phantomjs": "^1.9.18",
+    "source-map-loader": "^0.1.5",
     "ts-loader": "^0.6.1",
     "tsd": "^0.6.5",
     "tsify": "^0.12.2",

@@ -1,6 +1,5 @@
 var webpackConfig = require('./webpack.config.js');
 webpackConfig.entry = {};
-webpackConfig.devtool = 'inline-source-map';
 
 module.exports = function(config) {
   config.set({
@@ -12,7 +11,7 @@ module.exports = function(config) {
     ],
     exclude: [],
     preprocessors: {
-      'tests.webpack.js': ['webpack','sourcemap']
+      'tests.webpack.js': ['webpack']
   //   'src/**.ts': ['webpack'],
   //   'src/**/*.test.ts': ['webpack'],
     },

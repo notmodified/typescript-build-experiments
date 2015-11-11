@@ -4,8 +4,9 @@
         "target": "es3",
         "noImplicitAny": true,
         "noEmitOnError": false,
-        "outDir": "./tmp",
-        "rootDir": "./"
+        "outDir": "build/",
+        "inlineSourceMap": true,
+        "rootDir": "."
     },
     "exclude": [
         "node_modules"
