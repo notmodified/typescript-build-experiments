@@ -1,20 +1,24 @@
 var webpackConfig = require('./webpack.config.js');
 webpackConfig.entry = {};
-webpackConfig.devtool = 'inline-source-map';
+webpackConfig.plugins = [];
+//webpackConfig.devtool = 'inline-source-map';
+
 
 module.exports = function(config) {
   config.set({
     basePath: '.',
     frameworks: ['jasmine'],
     files: [
-      'tests.webpack.js'
-   //   './src/app.ts', './src/**/*.test.ts',
+      './tests.webpack.js'
+   //   './src/app.ts',
+   //   './src/**/*.test.ts',
     ],
     exclude: [],
     preprocessors: {
-      'tests.webpack.js': ['webpack','sourcemap']
-  //   'src/**.ts': ['webpack'],
-  //   'src/**/*.test.ts': ['webpack'],
+      './tests.webpack.js': ['webpack']
+ //    './src/**/*.ts': ['webpack'],
+ //    './src/*.ts': ['webpack'],
+    // './src/**/*.test.ts': ['webpack'],
     },
     reporters: ['mocha'],
     port: 9876,

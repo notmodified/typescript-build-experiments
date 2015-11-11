@@ -1,8 +1,14 @@
+var webpack = require('webpack');
+
+
 module.exports = {
-//  devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
 //  devtool: '#eval-source-map',
-  devtool: '#cheap-inline-source-map',
-  entry: './src/app.ts',
+//  devtool: '#cheap-inline-source-map',
+  entry: {
+    app: './src/app.ts',
+    vendor: ['angular', 'angular-ui-bootstrap'],
+  },
   output: {
     filename: './app/js/dist/bundle.js'
   },
@@ -15,5 +21,8 @@ module.exports = {
       // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./app/js/dist/vendor.bundle.js")
+  ]
 }
